@@ -16,6 +16,11 @@ metadata = MetaData(naming_convention={
 db = SQLAlchemy(metadata=metadata)
 
 # Lets create a class
-class NewClass(db.Model):
-    __tablename__ = ''
+
+# Best practice is to name the class in the singular form of the table name
+class Pet(db.Model):
+    __tablename__ = 'pets_table'
     id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
+    species = db.Column(db.String)
+    color = db.Column(db.String)

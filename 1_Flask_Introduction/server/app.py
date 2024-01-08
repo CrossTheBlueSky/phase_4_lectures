@@ -4,13 +4,19 @@ from flask_migrate import Migrate
 from models import db
 
 # Setting up the app
-# app = Flask(__name__)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# migrate = Migrate(app,db)
-# db.init_app()
+
+# This is boilerplate code that we will use for all of our flask apps
+# The only change would be to change the name of the db 
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+migrate = Migrate(app,db)
+db.init_app()
 
 # Now lets run int the terminal
+
+# These are also boilerplate code that we will use for all of our flask apps
+
     # export FLASK_APP=app.py
     # export FLASK_RUN_PORT=5555
     # flask db init
